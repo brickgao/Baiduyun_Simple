@@ -1,11 +1,16 @@
-function Get_url(shareid, uk, callback) {
+function Get_url(shareid, uk) {
   this.options = {
     host: 'yun.baidu.com',
     port: 80,
     path: '/share/link?shareid=' + shareid + '&uk=' + uk,
     method: 'GET'
   };
-  this.url = '';
+  this.json = {
+    shareid: shareid,
+    uk: uk,
+    error: true,
+    url: ''
+  };
 };
 
 module.exports = Get_url;
@@ -13,6 +18,7 @@ module.exports = Get_url;
 Get_url.prototype.req = function(callback) {
   var opt = this.options;
   var http = require('http');
+  var json = this.json;
   var func = http.get(opt, function(res) {
     var pageData = "";
     res.setEncoding('UTF-8');
@@ -25,8 +31,16 @@ Get_url.prototype.req = function(callback) {
       var reg2 = 'dlink\\\\":.+?(http.+?' + md5_s + '\?.+?sh=1)';
       var raw = pageData.match(reg2)[1];
       raw = raw.replace(/\\/gi, "");
-      this.url = raw;
-      callback(this.url);
+      console.log(raw);
+      console.log(json);
+      if(raw === null) {
+        callback(json);
+      }
+      else {
+        json.url = raw;
+        json.error = false;
+        callback(json);
+      }
     });
   });
 };
