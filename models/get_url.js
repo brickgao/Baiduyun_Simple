@@ -26,21 +26,22 @@ Get_url.prototype.req = function(callback) {
       pageData += chunk;
     });
     res.on('end', function() {
-      var reg = '"md5\\\\":\\\\\\"(.+?)\\\\"';
+      var reg = RegExp('"md5\\\\":\\\\\\"(.+?)\\\\"');
+      if(reg.test(pageData) == false) {
+        return callback(json);
+      }
       var md5_s = pageData.match(reg)[1];
-      var reg2 = 'dlink\\\\":.+?(http.+?' + md5_s + '\?.+?sh=1)';
+      var reg2 = RegExp('dlink\\\\":.+?(http.+?' + md5_s + '\?.+?sh=1)');
+      if(reg2.test(pageData) == false) {
+        return callback(json);
+      }
       var raw = pageData.match(reg2)[1];
       raw = raw.replace(/\\/gi, "");
       console.log(raw);
       console.log(json);
-      if(raw === null) {
-        callback(json);
-      }
-      else {
-        json.url = raw;
-        json.error = false;
-        callback(json);
-      }
+      json.url = raw;
+      json.error = false;
+      callback(json);
     });
   });
 };
