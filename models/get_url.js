@@ -37,8 +37,6 @@ Get_url.prototype.req = function(callback) {
       }
       var raw = pageData.match(reg2)[1];
       raw = raw.replace(/\\/gi, "");
-      console.log(raw);
-      console.log(json);
       json.url = raw;
       json.error = false;
       callback(json);
