@@ -21,6 +21,6 @@ module.exports = function(app) {
   app.get('/get_started', function(req, res) {
     res.render('get_started', {
       title: 'Get Started'
-    }
+    })
   });
 };
