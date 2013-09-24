@@ -1,2 +1,33 @@
 <%- include header %>
+<% if (locals.success) {%>
+  <div class="alert alert-success">
+    <%= locals.success %>
+  </div>
+<% } %>
+<% if (locals.error) { %>
+  <div class="alert alert-error">
+    <%= locals.error %>
+  </div>
+ <% } %>
+<form class="form-horizontal" method="post">
+  <legend>Web App</legend>
+  <p>Enter uk and share id in share link, then you will get the link that is decoded.</p>
+  <fieldset>
+    <div class="control-group">
+      <label class="control-label" for="shareid">shareid</label>
+      <div class="controls">
+        <input type="text" class="input-large" style="height: 28px;" id="shareid" name="shareid">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="uk">uk</label>
+      <div class="controls">
+        <input type="text" class="input-large" style="height: 28px;" id="uk" name="uk">
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="sumbit" class="btn btn-primary">Get Link</button>
+    </div>
+  </fieldset>
+</form>
 <%- include footer %>
