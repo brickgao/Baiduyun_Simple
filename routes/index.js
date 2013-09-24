@@ -23,4 +23,10 @@ module.exports = function(app) {
       title: 'Get Started'
     })
   });
+
+  app.get('/web_app', function(req, res) {
+    res.render('web_app', {
+      title: 'Web App'
+    })
+  });
 };
