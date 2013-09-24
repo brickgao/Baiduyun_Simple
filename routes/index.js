@@ -34,15 +34,6 @@ module.exports = function(app) {
     var get_url = require('../models/get_url.js');
     var currentshareid = req.body.shareid;
     var currentuk = req.body.uk;
-    var new_post = new get_url(currentshareid, currentuk);
-    new_post.u_req(function(ret) {
-      if(ret.url === null) {
-        req.session.error = 'invaild input';
-        console.log(req.session.error);
-        return res.redirect('/web_app');
-      }
-      req.session.error = ret.url;
-      res.redirect('/web_app');
-    });
+    return res.redirect('/req?shareid=' + currentshareid + '&uk=' + currentuk);
   });
 };
