@@ -14,11 +14,11 @@ module.exports = function(app) {
     var get_url = require('../models/get_url.js');
     var new_url = new get_url(req.query.shareid, req.query.uk);
     new_url.req(function(ret) {
-      console.log(ret);
+      var new_json = {
+        url: [ret]
+      }
+      res.send(new_json);
     });
-    res.render('req', {
-      title: 'Req'
-    })
   });
 
   app.post('/req', function(req, res) {
