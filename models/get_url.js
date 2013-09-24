@@ -9,13 +9,13 @@ function Get_url(shareid, uk) {
     shareid: shareid,
     uk: uk,
     error: true,
-    url: ''
+    url: null
   };
 };
 
 module.exports = Get_url;
 
-Get_url.prototype.req = function(callback) {
+Get_url.prototype.u_req = function(callback) {
   var opt = this.options;
   var http = require('http');
   var json = this.json;
