@@ -14,15 +14,8 @@ module.exports = function(app) {
     var get_url = require('../models/get_url.js');
     var new_url = new get_url(req.query.shareid, req.query.uk);
     new_url.req(function(ret) {
-      var new_json = {
-        url: [ret]
-      }
-      res.send(new_json);
+      res.send(ret);
     });
   });
 
-  app.post('/req', function(req, res) {
-    var init_url = req.session.url;
-    console.log(init_url);
-  });
 };
