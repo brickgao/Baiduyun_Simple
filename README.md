@@ -3,12 +3,12 @@ Baiduyun Simple [![Build Status](https://travis-ci.org/brickgao/Baiduyun_Simple.
 
 A web service written by node.js to decode the share link from baidu yun.
 
-Build
+Get Started
 -----
 
 Get Baiduyun Simple
 
-*	Download the lastest release or clone the repo: ``
+*	Download the lastest release or clone the repo: `git@github.com:brickgao/Baiduyun_Simple.git`
 
 Get Node.js
 
@@ -21,7 +21,7 @@ Get modules
 Then you can use command `node app.js` and enjoy it ~!
 
 
-Get Started
+How to use
 -----------
 
 There is two simple way to use it. :)
