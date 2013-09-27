@@ -18,12 +18,6 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/get_started', function(req, res) {
-    res.render('get_started', {
-      title: 'Get Started'
-    })
-  });
-
   app.get('/web_app', function(req, res) {
     res.render('web_app', {
       title: 'Web App'
