@@ -45,7 +45,7 @@ For Example,
 
 If there is a link:
 
-	http://yun.baidu.com/share/linkshareid=198923&uk=4281611514
+	http://yun.baidu.com/share/link?shareid=198923&uk=4281611514
 
 There is a json you get:
 
