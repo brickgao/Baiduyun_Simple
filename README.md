@@ -32,7 +32,7 @@ There is two simple way to use it. :)
 
 You can make a get method to `/req` include uk and shareid in the share link. Just like request though baidu API.
 
-**TIP: the expire time of the link is not vrey long, you should request again when you use.**
+**TIP: the expire time of the link is not very long, you should request again when you use.**
 
 Request Header:
 
