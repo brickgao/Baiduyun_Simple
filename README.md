@@ -3,6 +3,8 @@ Baiduyun Simple [![Build Status](https://travis-ci.org/brickgao/Baiduyun_Simple.
 
 A web service written by node.js to decode the share link from baidu yun.
 
+The project has been build on BAE, you can visit [http://easydown.duapp.com/](http://easydown.duapp.com/) to have a test.
+
 Get Started
 -----
 
